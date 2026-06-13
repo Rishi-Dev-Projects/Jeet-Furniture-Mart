@@ -31,7 +31,7 @@ export async function PATCH(request: NextRequest, { params }: { params: Promise<
           style: 'normal',
         },
       ],
-      price: body.price,
+      dimensions: body.dimensions || '',
       material: body.material || '',
       featured: body.featured || false,
     };

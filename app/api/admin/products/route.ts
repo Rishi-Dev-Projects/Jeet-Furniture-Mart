@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
           style: 'normal',
         },
       ],
-      price: body.price,
+      dimensions: body.dimensions || '',
       material: body.material || '',
       featured: body.featured || false,
       createdAt: new Date().toISOString(),

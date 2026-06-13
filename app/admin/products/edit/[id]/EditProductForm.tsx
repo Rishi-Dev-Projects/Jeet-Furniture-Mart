@@ -10,7 +10,7 @@ interface ProductData {
   name: string;
   category: string;
   description: string;
-  price?: number;
+  dimensions?: string;
   material: string;
   featured: boolean;
   imageUrl?: string;
@@ -25,7 +25,7 @@ export default function EditProductForm({ product }: { product: ProductData }) {
     name: product.name || '',
     category: product.category || 'sofa',
     description: product.description || '',
-    price: product.price || '',
+    dimensions: product.dimensions || '',
     material: product.material || '',
     featured: product.featured || false,
   });
@@ -69,7 +69,6 @@ export default function EditProductForm({ product }: { product: ProductData }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
           ...formData, 
-          price: formData.price ? Number(formData.price) : undefined,
           assetId 
         }),
       });
@@ -144,18 +143,14 @@ export default function EditProductForm({ product }: { product: ProductData }) {
         {/* Details */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <label className="block text-xs font-sans uppercase tracking-widest text-stone-500 font-bold">Price (₹)</label>
-            <div className="relative">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-stone-500 font-bold">₹</span>
-              <input
-                type="number"
-                min="0"
-                placeholder="e.g. 15000"
-                value={formData.price}
-                onChange={(e) => setFormData({ ...formData, price: e.target.value })}
-                className="w-full pl-8 pr-3 py-2 border border-[#E0DDD8] focus:outline-none focus:ring-1 focus:ring-gold-accent focus:border-gold-accent"
-              />
-            </div>
+            <label className="block text-xs font-sans uppercase tracking-widest text-stone-500 font-bold">Dimensions</label>
+            <input
+              type="text"
+              placeholder="e.g. 6ft x 4ft x 2ft"
+              value={formData.dimensions}
+              onChange={(e) => setFormData({ ...formData, dimensions: e.target.value })}
+              className="w-full px-3 py-2 border border-[#E0DDD8] focus:outline-none focus:ring-1 focus:ring-gold-accent focus:border-gold-accent"
+            />
           </div>
           <div className="space-y-2">
             <label className="block text-xs font-sans uppercase tracking-widest text-stone-500 font-bold">Material</label>
