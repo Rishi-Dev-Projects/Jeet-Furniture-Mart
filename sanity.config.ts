@@ -3,6 +3,7 @@ import { structureTool } from 'sanity/structure';
 import product from './sanity/schema/product';
 import testimonial from './sanity/schema/testimonial';
 import siteAnalytics from './sanity/schema/siteAnalytics';
+import siteSettings from './sanity/schema/siteSettings';
 
 export default defineConfig({
   name: 'default',
@@ -16,6 +17,6 @@ export default defineConfig({
   plugins: [structureTool()],
 
   schema: {
-    types: [product, testimonial, siteAnalytics],
+    types: [product, testimonial, siteAnalytics, siteSettings],
   },
 });
