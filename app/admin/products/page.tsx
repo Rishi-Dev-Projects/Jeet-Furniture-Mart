@@ -20,7 +20,7 @@ export default async function AdminProductsPage() {
         <h2 className="text-2xl font-display font-bold text-stone-900">Manage Products</h2>
         <Link
           href="/admin/products/new"
-          className="flex items-center space-x-2 bg-stone-900 text-white px-4 py-2 hover:bg-stone-800 transition-colors"
+          className="hidden md:flex items-center space-x-2 bg-stone-900 text-white px-4 py-2 hover:bg-stone-800 transition-colors"
         >
           <Plus className="w-4 h-4" />
           <span className="text-sm font-sans uppercase tracking-widest font-bold">Add Product</span>

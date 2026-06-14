@@ -186,7 +186,7 @@ export default function EditProductForm({ product }: { product: ProductData }) {
                 <p className="text-xs text-center text-stone-500 mt-2">Current Image</p>
               </div>
             )}
-            <div className="space-y-1 text-center">
+            <div className="hidden md:block space-y-1 text-center">
               {imageFile ? (
                 <div className="text-sm text-stone-900 font-medium mb-2">Selected New Image: {imageFile.name}</div>
               ) : (
@@ -202,6 +202,10 @@ export default function EditProductForm({ product }: { product: ProductData }) {
                 </label>
               </div>
               <p className="text-xs text-stone-500 mt-2">PNG, JPG, WEBP up to 10MB</p>
+            </div>
+            <div className="md:hidden text-center text-xs text-stone-500 mt-2">
+              <p className="font-bold text-stone-700">Image replacement is disabled on mobile devices.</p>
+              <p>Please use a desktop to upload high-quality images.</p>
             </div>
           </div>
         </div>
